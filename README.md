@@ -1,29 +1,15 @@
-# Welcome to your Lovable project
+# Pretty Smile Dental Clinic — website
 
-This project was built with [Lovable](https://lovable.dev).
+## Items to confirm with the clinic
+- WhatsApp number (currently the emergency number)
+- Opening hours (old site showed conflicting hours)
+- DHA licence number
+- Facebook / Instagram URLs, Google Maps link and map coordinates
+- Stats (2,786 smiles, 4,247 services, 20,569 followers, 18 years)
+- Prices (300 / 800 / 10,000+ AED) and the welcome-discount offer
+- X-ray wording, walk-in policy, parking, consultation fee
+- Clinical wording on all service pages to be reviewed by the clinic
 
-## Build with Lovable
-
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Images
+All photos (logo, doctor portraits, before/after) are the clinic's originals taken from prettysmiledubai.ae, shown unedited. No AI-generated people are used anywhere.
+Photos needed: higher-resolution doctor portraits, real clinic interior photos, vector (SVG) logo.
