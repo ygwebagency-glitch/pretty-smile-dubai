@@ -28,7 +28,7 @@ export function Arrow() {
   return <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.5} />;
 }
 
-export function Eyebrow({ children, dark }: { children: ReactNode; dark?: boolean }) {
+export function Eyebrow({ children, dark }: { children: ReactNode; dark?: boolean | undefined }) {
   return (
     <p className={cn("mb-5 flex items-center gap-3 text-[13px] font-medium uppercase tracking-[0.18em]", dark ? "text-gold-soft" : "text-muted-foreground")}>
       <span className="h-px w-8 bg-gold" />
@@ -193,6 +193,6 @@ export function SectionHeading({ eyebrow, title, text, dark, center }: { eyebrow
   );
 }
 
-export function Accent({ children, dark }: { children: ReactNode; dark?: boolean }) {
+export function Accent({ children, dark }: { children: ReactNode; dark?: boolean | undefined }) {
   return <em className={cn("font-light", dark ? "text-gold-soft" : "text-aqua")}>{children}</em>;
 }

@@ -44,7 +44,7 @@ export function Hero() {
         </div>
         <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[440px] lg:col-span-6 lg:max-w-[480px]">
           <motion.div style={{ y }} className="aspect-[4/5]">
-            <ArchFrame src={doctors[0].photo} alt="Dr. Adnan Ahmad, Pretty Smile Dental Clinic" position="50% 15%" className="h-full bg-aqua-soft" eager />
+            <ArchFrame src={doctors[0]!.photo} alt="Dr. Adnan Ahmad, Pretty Smile Dental Clinic" position="50% 15%" className="h-full bg-aqua-soft" eager />
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="absolute -left-4 top-16 sm:-left-12">
             <div className="glass animate-bob rounded-2xl px-5 py-4 shadow-card">

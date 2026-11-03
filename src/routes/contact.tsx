@@ -5,7 +5,7 @@ import { BookingForm } from "@/components/site/BookingForm";
 import { Accent, Reveal } from "@/components/site/ui";
 
 export const Route = createFileRoute("/contact")({
-  validateSearch: (s: Record<string, unknown>): { doctor?: string } => ({ doctor: typeof s.doctor === "string" ? s.doctor : undefined }),
+  validateSearch: (s: Record<string, unknown>): { doctor?: string | undefined } => ({ doctor: typeof s["doctor"] === "string" ? s["doctor"] : undefined }),
   head: () => seo("Book a Dentist in Dubai | Contact Pretty Smile", "Book an appointment at Pretty Smile Dental Clinic, Al Meraikhi Tower, Sheikh Zayed Road. Call +971 4 886 6248.", "/contact"),
   component: Contact,
 });
