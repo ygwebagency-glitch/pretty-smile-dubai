@@ -10,9 +10,9 @@ type Fields = { name: string; phone: string; email: string; service: string; doc
 
 export function validateBooking(f: Pick<Fields, "name" | "phone" | "email">) {
   const e: Record<string, string> = {};
-  if (f.name.trim().length < 2) e.name = "Please enter your full name.";
-  if (!/^\+?[\d\s()-]{7,}$/.test(f.phone.trim())) e.phone = "Please enter a valid phone number.";
-  if (f.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email)) e.email = "Please enter a valid email.";
+  if (f.name.trim().length < 2) e["name"] = "Please enter your full name.";
+  if (!/^\+?[\d\s()-]{7,}$/.test(f.phone.trim())) e["phone"] = "Please enter a valid phone number.";
+  if (f.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email)) e["email"] = "Please enter a valid email.";
   return e;
 }
 
