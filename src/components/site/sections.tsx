@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section ref={ref} className="grain relative flex min-h-[100svh] items-center overflow-hidden pb-20 pt-40">
       <div className="pointer-events-none absolute -right-40 top-10 h-[560px] w-[560px] rounded-full bg-aqua-soft blur-3xl" />
-      <svg className="pointer-events-none absolute left-0 top-1/3 w-full text-gold/50" viewBox="0 0 1440 300" fill="none" aria-hidden><path d="M0 250 C 400 50, 900 350, 1440 80" stroke="currentColor" strokeWidth="1" /></svg>
+      <svg className="pointer-events-none absolute left-0 top-1/3 w-full text-gold/50 [mask-image:linear-gradient(to_right,#000_7.3%,transparent_7.3%,transparent_39.2%,#000_39.2%)] [-webkit-mask-image:linear-gradient(to_right,#000_7.3%,transparent_7.3%,transparent_39.2%,#000_39.2%)]" viewBox="0 0 1440 300" fill="none" aria-hidden><path d="M0 250 C 400 50, 900 350, 1440 80" stroke="currentColor" strokeWidth="1" /></svg>
       <div className="container-lux relative grid items-center gap-16 lg:grid-cols-12">
         <div className="lg:col-span-6">
           <Eyebrow>Dental Care Clinic, Dubai</Eyebrow>
@@ -252,7 +252,7 @@ export function Reviews() {
           <p className="mt-3 text-ivory/75">{clinic.reviews} Google reviews</p>
           <a href={clinic.mapsUrl} target="_blank" rel="noreferrer" className="link-grow mt-6 inline-flex items-center gap-2 text-gold-soft">Read more on Google <Arrow /></a>
         </div>
-        <div className="lg:col-span-8" onMouseEnter={() => setPause(true)} onMouseLeave={() => setPause(false)}>
+        <div className="relative min-w-0 overflow-hidden lg:col-span-8" onMouseEnter={() => setPause(true)} onMouseLeave={() => setPause(false)}>
           <motion.div
             className="flex cursor-grab gap-6 active:cursor-grabbing"
             drag="x"
