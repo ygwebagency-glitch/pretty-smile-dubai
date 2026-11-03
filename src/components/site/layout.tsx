@@ -19,7 +19,7 @@ const nav = [
 
 function UtilityBar() {
   return (
-    <div className="hidden h-[38px] bg-ink text-[13px] text-ivory/85 md:block">
+    <div className="relative z-[55] hidden h-[38px] bg-ink text-[13px] text-ivory/85 md:block">
       <div className="container-lux flex h-full items-center justify-between">
         <span className="flex items-center gap-2"><Clock className="h-3.5 w-3.5 text-gold" strokeWidth={1.5} />{clinic.hoursShort}</span>
         <span className="flex items-center gap-6">
