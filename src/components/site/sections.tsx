@@ -312,11 +312,21 @@ export function FAQ({ items = homeFaqs, title }: { items?: { q: string; a: strin
 
 export function InfoList() {
   return (
-    <ul className="grid gap-4 text-sm sm:grid-cols-2">
-      <li className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-gold" strokeWidth={1.5} />{clinic.address}</li>
-      <li className="flex gap-3"><Phone className="h-5 w-5 shrink-0 text-gold" strokeWidth={1.5} /><span><a className="link-grow" href={clinic.phoneHref}>{clinic.phone}</a><br />Emergency <a className="link-grow" href={clinic.emergencyHref}>{clinic.emergency}</a></span></li>
-      <li className="flex gap-3"><Mail className="h-5 w-5 shrink-0 text-gold" strokeWidth={1.5} /><a className="link-grow" href={`mailto:${clinic.email}`}>{clinic.email}</a></li>
-      <li className="flex gap-3"><Clock className="h-5 w-5 shrink-0 text-gold" strokeWidth={1.5} /><span>{clinic.hours.map((h) => <span key={h.day} className="block">{h.day}: {h.time}</span>)}</span></li>
+    <ul className="grid gap-x-8 gap-y-6 text-sm sm:grid-cols-2">
+      {[
+        { icon: MapPin, label: "Address", body: <span>{clinic.address}</span> },
+        { icon: Phone, label: "Phone", body: <><a className="link-grow block" href={clinic.phoneHref}>{clinic.phone}</a><span className="block">Emergency: <a className="link-grow whitespace-nowrap" href={clinic.emergencyHref}>{clinic.emergency}</a></span></> },
+        { icon: Mail, label: "Email", body: <a className="link-grow break-all" href={`mailto:${clinic.email}`}>{clinic.email}</a> },
+        { icon: Clock, label: "Opening hours", body: <>{clinic.hours.map((h) => <span key={h.day} className="block"><span className="font-medium text-ink">{h.day}</span><br />{h.time}</span>)}</> },
+      ].map((it) => (
+        <li key={it.label} className="flex min-w-0 items-start gap-3">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-paper text-gold shadow-card"><it.icon className="h-4 w-4" strokeWidth={1.5} /></span>
+          <div className="min-w-0 space-y-1 leading-relaxed">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">{it.label}</p>
+            <div className="space-y-1 text-foreground">{it.body}</div>
+          </div>
+        </li>
+      ))}
     </ul>
   );
 }
