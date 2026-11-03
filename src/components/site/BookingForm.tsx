@@ -66,9 +66,9 @@ export function BookingForm({ defaultService = "", defaultDoctor = "", compact }
       }}
       className="grid gap-4 sm:grid-cols-2"
     >
-      <Field label="Full name *" error={errors.name}><input className={inputCls} value={f.name} onChange={set("name")} autoComplete="name" aria-invalid={!!errors.name} /></Field>
-      <Field label="Phone *" error={errors.phone}><input className={inputCls} value={f.phone} onChange={set("phone")} type="tel" autoComplete="tel" aria-invalid={!!errors.phone} /></Field>
-      {!compact && <Field label="Email" error={errors.email}><input className={inputCls} value={f.email} onChange={set("email")} type="email" autoComplete="email" /></Field>}
+      <Field label="Full name *" error={errors["name"]}><input className={inputCls} value={f.name} onChange={set("name")} autoComplete="name" aria-invalid={!!errors["name"]} /></Field>
+      <Field label="Phone *" error={errors["phone"]}><input className={inputCls} value={f.phone} onChange={set("phone")} type="tel" autoComplete="tel" aria-invalid={!!errors["phone"]} /></Field>
+      {!compact && <Field label="Email" error={errors["email"]}><input className={inputCls} value={f.email} onChange={set("email")} type="email" autoComplete="email" /></Field>}
       <Field label="Service" className={compact ? "" : ""}>
         <select className={inputCls} value={f.service} onChange={set("service")}>
           <option value="">General consultation</option>
@@ -99,7 +99,7 @@ export function BookingForm({ defaultService = "", defaultDoctor = "", compact }
   );
 }
 
-function Field({ label, error, children, className }: { label: string; error?: string; children: React.ReactNode; className?: string }) {
+function Field({ label, error, children, className }: { label: string; error?: string | undefined; children: React.ReactNode; className?: string }) {
   return (
     <label className={cn("block text-sm font-medium text-ink", className)}>
       <span className="mb-2 block">{label}</span>
